@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IPLCrics</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="static/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="static/css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="static/css/jquery-ui.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link href="/static/images/favicon.png" rel="icon">
+</head>
+<body>
+	<div class="page-content" style="background-image: url('static/images/field.png')">
+		<div class="wizard-v4-content">
+			<div class="wizard-form">
+				<div class="wizard-header">
+					<h3 class="heading">IPL Score Predictor</h3>
+				</div>
+		        <form class="form-register" action="/predict" method="POST">
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-collection-item-1"></i></span>
+			            	<span class="step-text">Batting</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Choose the Batting Team</h3>
+								<div class="form-row form-row-date">
+									<div class="form-holder form-holder-2">
+										<div class="drop-down">
+										<select name="batting-team">
+											<option value="Team 1" disabled selected>Batting Team</option>
+											<option value="Chennai Super Kings">Chennai Super Kings</option>
+											<option value="Delhi Daredevils">Delhi Daredevils</option>
+											<option value="Kings XI Punjab">Kings XI Punjab</option>
+											<option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+											<option value="Mumbai Indians">Mumbai Indians</option>
+											<option value="Rajasthan Royals">Rajasthan Royals</option>
+											<option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+											<option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+										</select>
+										<br>
+										<br>
+										</div>
+									</div>
+
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-collection-item-2"></i></span>
+			            	<span class="step-text">Bowling</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Choose the Bowling Team</h3>
+								<div class="form-row form-row-date">
+									<div class="form-holder form-holder-2">
+										<div class="drop-down">
+										<br>
+										<br>
+										<select name="bowling-team">
+											<option value="Team 2" disabled selected>Bowling Team</option>
+											<option value="Chennai Super Kings">Chennai Super Kings</option>
+											<option value="Delhi Daredevils">Delhi Daredevils</option>
+											<option value="Kings XI Punjab">Kings XI Punjab</option>
+											<option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+											<option value="Mumbai Indians">Mumbai Indians</option>
+											<option value="Rajasthan Royals">Rajasthan Royals</option>
+											<option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+											<option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+										</select>
+									</div>
+									</div>
+
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 3 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-collection-item-3"></i></span>
+			            	<span class="step-text">Score</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<h4>Score within first 10 overs</h4>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="overs" class="form-control"required>
+											<span class="label">Overs</span>
+											<span class="border"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="runs" class="form-control"required>
+											<span class="label">Runs scored</span>
+											<span class="border"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="wickets" class="form-control" required>
+											<span class="label">Wickets taken</span>
+											<span class="border"></span>
+										</label>
+									</div>
+								</div>
+
+
+							</div>
+			            </section>
+			            <!-- SECTION 4 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-collection-item-4"></i></span>
+			            	<span class="step-text">Last 5</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Score in previous 5 overs</h3>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="runs_in_prev_5" class="form-control" required>
+											<span class="label">Runs scored</span>
+											<span class="border"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="wickets_in_prev_5" class="form-control" required>
+											<span class="label">Wickets taken</span>
+											<span class="border"></span>
+										</label>
+									</div>
+								</div>
+								<div class="center">
+									<input type="submit" class="Predict_button" value="Predict">
+
+								</div>
+							</div>
+
+			            </section>
+
+		        	</div>
+
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<script src="static/js/jquery.steps.js"></script>
+	<script src="static/js/jquery-ui.min.js"></script>
+	<script src="static/js/main.js"></script>
+</body>
+</html>
